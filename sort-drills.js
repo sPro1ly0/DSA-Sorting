@@ -202,6 +202,23 @@ function randomSort(array) {
 };
 
 let test = [1, 2, 3, 4, 5];
-console.log(randomSort(test)); // ex. [4, 5, 3, 1, 2]
+// console.log(randomSort(test)); // ex. [4, 5, 3, 1, 2]
 
-// 8. Sorting books
+// 8. Sorting books - Imagine that I gave you 20 books to sort in alphabetical order. Express this as an algorithm and then implement your algorithm
+
+function sortBooks(books) {
+    if (books.length <= 1) {
+        return books;
+    }
+
+    const middle = Math.floor(books.length / 2);
+    let left = books.slice(0, middle);
+    let right = books.slice(middle, books.length);
+
+    left = sortBooks(left);
+    right = sortBooks(right);
+    return merge(left, right, books);
+}
+
+let books = ['Harry Potter', 'Narnia', 'Cats', 'Cook Book', 'Artemis Fowl', 'Magic Tricks', 'The Stars'];
+console.log(sortBooks(books));
