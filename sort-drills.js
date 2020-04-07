@@ -187,6 +187,21 @@ let maxNum = 19;
 
 // console.log(bucketSort(bucketList, minNum, maxNum))
 
-// 7. Sort in place
+// 7. Sort in place - shuffle an array into a random order in place
+
+function randomSort(array) {
+
+    for (let i = 0; i < array.length; i++) {
+        let randomIndex = Math.floor(Math.random() * (array.length - 1));
+        let numberAtRandom = array[randomIndex];
+        array[randomIndex] = array[i];
+        array[i] = numberAtRandom;
+    }
+
+    return array;
+};
+
+let test = [1, 2, 3, 4, 5];
+console.log(randomSort(test)); // ex. [4, 5, 3, 1, 2]
 
 // 8. Sorting books
