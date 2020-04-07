@@ -162,3 +162,31 @@ function merge(left, right, array) {
 };
 
 // console.log(mSort(data));
+
+// 5. Sorting a linked list using merge sort
+
+// 6. Bucket sort
+
+function bucketSort(array, min, max) {
+    let bucket = [];
+
+    for (let i = 0; i < max; i++) {
+        bucket[i] = 0;
+    }
+
+    for (let i = 0; i < array.length; i++) {
+        bucket[array[i] - min] = array[i];
+    }
+
+    return bucket;
+}
+
+let bucketList = [14, 17, 13, 15, 19, 10, 3, 16, 9, 12];
+let minNum = 3;
+let maxNum = 19;
+
+// console.log(bucketSort(bucketList, minNum, maxNum))
+
+// 7. Sort in place
+
+// 8. Sorting books
